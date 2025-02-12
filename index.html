@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my Valentine?</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        @font-face {
+            font-family: 'NotoSans_online_security';
+            src: url('fonts/noto-sans-regular.woff');
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-color: #ffdde1;
+            font-family: 'NotoSans_online_security', sans-serif;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease-in-out;
+        }
+
+        h1 {
+            color: #ff4d6d;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #ff3366;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .download-btn:hover {
+            background-color: #e62e5c;
+        }
+
+        .yes-button, .no-button {
+                padding: 10px 20px;
+                font-size: 24px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin: 10px;
+            }
+
+            .yes-button {
+                background-color: #ff4d6d;
+                color: white;
+            }
+
+            .no-button {
+                background-color: #ccc;
+                color: black;
+                position: absolute;
+            }
+
+            .gif_container img {
+                width: 300px;
+                margin-top: 20px;
+            }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <h1>Will you be my Valentine?</h1>
+<div class="buttons">
+    <button class="yes-button" id="yesButton" onclick="handleYesClick()">Yes</button>
+    <button class="no-button" id="noButton" onclick="handleNoClick()">No</button>
+</div>
+
+<script>
+    let frases = [
+        "¿Estás segura?",
+        "Piénsalo mejor...",
+        "No te arrepentirás",
+        "¡Vamos, di que sí!",
+        "Presiona Yes ❤️",
+        "¡Es tu última oportunidad!"
+    ];
+
+    function handleYesClick() {
+        document.getElementById("main-container").style.display = "none";
+        document.getElementById("final-screen").style.display = "block";
+    }
+
+    function handleNoClick() {
+        let yesButton = document.getElementById("yesButton");
+        let noButton = document.getElementById("noButton");
+
+        // Agrandar el botón "Yes"
+        let currentSize = parseInt(window.getComputedStyle(yesButton).fontSize);
+        yesButton.style.fontSize = (currentSize + 5) + "px";
+        yesButton.style.padding = "15px 30px"; // Ajustar el tamaño del botón
+
+        // Cambiar el texto del botón "No" aleatoriamente
+        let randomIndex = Math.floor(Math.random() * frases.length);
+        noButton.innerText = frases[randomIndex];
+    }
+</script>
+        <div class="gif_container">
+            <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cute GIF">
+        </div>
+    </div>
+
+    <!-- Pantalla final después de hacer clic en "Yes" -->
+    <div class="final-screen" id="final-screen" style="display: none; text-align: center;">
+        <h1>¡Sabía que dirías que sí! 💖</h1>
+        <img src="https://media.giphy.com/media/5dUllWbKVlaqmMTvHb/giphy.gif" alt="Happy GIF">
+        
+        <!-- Botón para descargar la carta -->
+        <a href="C:/Users/Jasson%20Guzman/Desktop/TTT/My_valentine.pdf" download class="download-btn">Descargar mi carta para ti 💌</a>
+    </div>
+
+    <script>
+        function handleYesClick() {
+            document.getElementById("main-container").style.display = "none";
+            document.getElementById("final-screen").style.display = "block";
+        }
+        
+    </script>
+</body>
+</html>
+
