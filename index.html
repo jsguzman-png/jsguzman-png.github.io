@@ -95,6 +95,7 @@
         "No te arrepentirás",
         "¡Vamos, di que sí!",
         "Presiona Yes ❤️",
+        '¡Yo se que si quieres!',
         "¡Es tu última oportunidad!"
     ];
 
@@ -109,7 +110,7 @@
 
         // Agrandar el botón "Yes"
         let currentSize = parseInt(window.getComputedStyle(yesButton).fontSize);
-        yesButton.style.fontSize = (currentSize + 5) + "px";
+        yesButton.style.fontSize = (currentSize + 50) + "px";
         yesButton.style.padding = "15px 30px"; // Ajustar el tamaño del botón
 
         // Cambiar el texto del botón "No" aleatoriamente
@@ -126,9 +127,10 @@
     <div class="final-screen" id="final-screen" style="display: none; text-align: center;">
         <h1>¡Sabía que dirías que sí! 💖</h1>
         <img src="https://media.giphy.com/media/5dUllWbKVlaqmMTvHb/giphy.gif" alt="Happy GIF">
-        
+
         <!-- Botón para descargar la carta -->
-        <a href="C:/Users/Jasson%20Guzman/Desktop/TTT/My_valentine.pdf" download class="download-btn">Descargar mi carta para ti 💌</a>
+         <hr>
+       <a href="My_valentine.pdf" download class="download-btn">Descargar mi carta para ti 💌</a><hr>
     </div>
 
     <script>
